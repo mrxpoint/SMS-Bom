@@ -1,4 +1,5 @@
 import sys
+import time
 import requests
 
 def send_sms(phone_number, text):
@@ -43,6 +44,9 @@ def main(cnt, phone_number, text):
                 print(f"[{success_count}] SMS sent to {phone_number} successfully.")
             else:
                 print(f"[{i + 1}] Failed to send SMS to {phone_number}")
+            
+            # Tambahkan penundaan 1 detik antara pengiriman SMS
+            time.sleep(1)
 
     except (KeyboardInterrupt, EOFError):
         print("\n")
